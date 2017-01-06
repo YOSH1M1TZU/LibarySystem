@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections;
 
 namespace LibarySystem.Core.Interfaces {
 
-    interface IStudent {
+    internal interface IStudent : IEnumerable {
 
-        int ID { get; set; }
+        string PESEL { get; }
         string Name { get; set; }
         string SecondName { get; set; }
         string Surname { get; set; }
         string Class { get; set; }
+        DateTime DateOfBirth { get; set; }
 
     }
 

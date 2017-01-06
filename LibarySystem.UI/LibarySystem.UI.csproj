@@ -98,6 +98,10 @@
       <Project>{a7138b9e-44b8-40c0-a9e4-0182cb9652b8}</Project>
       <Name>LibarySystem.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LibarySystem.SQLDataReader\LibarySystem.SQLDataReader.csproj">
+      <Project>{e84019fa-df1f-4e1d-8ef7-e1eb4954d273}</Project>
+      <Name>LibarySystem.SQLDataReader</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

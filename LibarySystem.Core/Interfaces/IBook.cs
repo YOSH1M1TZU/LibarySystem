@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace LibarySystem.Core.Interfaces {
 
-    interface IBook : IEnumerable {
+    internal interface IBook : IEnumerable {
 
-        int ID { get; }
+        int Id { get; }
         string Name { get; set; }
         string Author { get; set; }
-        int ReleaseDate { get; set; }
+        bool IsLend { get; set; }
 
     }
 

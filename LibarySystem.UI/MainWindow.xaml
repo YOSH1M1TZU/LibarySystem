@@ -7,6 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button x:Name="BTNAdd" Content="Dodaj" HorizontalAlignment="Left" Margin="94,185,0,0" VerticalAlignment="Top"
+                Width="75" Click="BTNAdd_Click" />
+        <Label Content="Imie:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" />
+        <Label Content="Nazwisko:&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top"
+               Width="88" />
+        <Label Content="Pesel:&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="TXTBName" HorizontalAlignment="Left" Height="23" Margin="115,22,0,0"
+                 VerticalAlignment="Top" Width="120" MaxLines="1" Background="{x:Null}" SpellCheck.IsEnabled="True" />
+        <TextBox x:Name="TXTBSurname" HorizontalAlignment="Left" Height="23" Margin="115,54,0,0"
+                 VerticalAlignment="Top"
+                 Width="120" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
+        <TextBox x:Name="TXTBPesel" HorizontalAlignment="Left" Height="23" Margin="115,87,0,0" VerticalAlignment="Top"
+                 Width="120" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" Background="{x:Null}"
+                 MaxLines="1" MaxLength="11" />
+        <Label Content="Klasa:&#xA;" HorizontalAlignment="Left" Margin="9,115,0,0" VerticalAlignment="Top" />
+        <Label Content="Data urodzenia:&#xA;" HorizontalAlignment="Left" Margin="9,147,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="TXTBClass" HorizontalAlignment="Left" Height="23" Margin="115,116.656,0,0"
+                 VerticalAlignment="Top"
+                 Width="120" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
+        <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="115,150,0,0" VerticalAlignment="Top"
+                    Width="120" />
     </Grid>
 </Window>
