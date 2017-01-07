@@ -9,38 +9,27 @@ namespace LibarySystem.UnitTest.Core {
 
         [TestMethod]
         public void StudentConstructor() {
-            var newStudent = new Student("81021005331", "Mattias", "Lincooln");
+            var newStudent = new Student("81021005331", "Mattias", "Lincooln", "2Bi", "Lucian");
             var expectedPESEL = "81021005331";
             var expectedName = "Mattias";
             var expectedSurname = "Lincooln";
+            var expectedClass = "2Bi";
+            var expectedSecoundName = "Lucian";
 
             Assert.AreEqual(expectedPESEL, newStudent.PESEL);
             Assert.AreEqual(expectedName, newStudent.Name);
             Assert.AreEqual(expectedSurname, newStudent.Surname);
-
-            newStudent.Class = "2Bi";
-            var expectedClass = "2Bi";
-
             Assert.AreEqual(expectedClass, newStudent.Class);
-
-            newStudent.SecondName = "Lucian";
-            var expectedSecoundName = "Lucian";
-
             Assert.AreEqual(expectedSecoundName, newStudent.SecondName);
-
-            newStudent.DateOfBirth = new DateTime(1981, 02, 10);
-            var expectedDateOfBirth = new DateTime(1981, 02, 10);
-
-            Assert.AreEqual(expectedDateOfBirth, newStudent.DateOfBirth);
         }
 
         [TestMethod]
         public void StudentIEnumerableTest() {
             Student[] studentsArray = {
-                new Student("81021005331", "Mattias", "Lincooln"),
-                new Student("91023150244", "John", "Smitch"),
-                new Student("04113014551", "Lisa", "Ramplay"),
-                new Student("09031351566", "Jane", "Mary")
+                new Student("81021005331", "Mattias", "Lincooln", "2Bi", "Lucian"),
+                new Student("91023150244", "John", "Smitch", "3Li", "Steve"),
+                new Student("04113014551", "Lisa", "Ramplay", "1Ai"),
+                new Student("09031351566", "Jane", "Mary", "1Mi")
             };
 
             Assert.IsTrue(StudentForEachTest(studentsArray));

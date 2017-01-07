@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows;
 using LibarySystem.Core.Objects;
 using LibarySystem.SQLDataReader;
@@ -35,20 +36,18 @@ namespace LibarySystem.UI {
                 return;
             }
 
-            string stringDate = DatePicker.Text.ToString();
-            
+            try {
+                var studentToAdd = new Student(TXTBPesel.Text, TXTBName.Text, TXTBSurname.Text, TXTBClass.Text);
 
+                sqlWorker.AddStudent(studentToAdd);
+                MessageBox.Show("Uczen zostal poprawnie dodany!", "Libary System", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception exception) {
+                MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
 
-            //var studentToAdd = new Student(TXTBPesel.Text, TXTBName.Text, TXTBSurname.Text);
-
-            //try {
-            //    sqlWorker.AddStudent(studentToAdd);
-            //    MessageBox.Show("Uczen zostal poprawnie dodany!", "Libary System", MessageBoxButton.OK,
-            //        MessageBoxImage.Information);
-            //}
-            //catch (Exception exception) {
-            //    MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
         }
 
     }

@@ -10,7 +10,6 @@ namespace LibarySystem.Core.Interfaces {
         string SecondName { get; set; }
         string Surname { get; set; }
         string Class { get; set; }
-        DateTime DateOfBirth { get; set; }
 
     }
 

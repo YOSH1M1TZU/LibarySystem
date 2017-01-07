@@ -6,10 +6,12 @@ namespace LibarySystem.Core.Objects {
 
     public class Student : IStudent {
 
-        public Student(string pesel, string name, string surname) {
+        public Student(string pesel, string name, string surname, string studentClass, string secondName = "") {
             PESEL = pesel;
             Name = name;
             Surname = surname;
+            Class = studentClass;
+            SecondName = secondName;
         }
 
         public IEnumerator GetEnumerator() {
@@ -21,11 +23,9 @@ namespace LibarySystem.Core.Objects {
         public string SecondName { get; set; }
         public string Surname { get; set; }
         public string Class { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
         public override string ToString() {
-            return "Name: " + Name + " " + SecondName + ". Date of birth: " + DateOfBirth.ToShortDateString() +
-                   ". Class: " + Class + " PESEL: " + PESEL;
+            return "Name: " + Name + " " + SecondName + ". Class: " + Class + " PESEL: " + PESEL;
         }
 
     }
