@@ -12,7 +12,7 @@ namespace LibarySystem.Core.Objects {
             IsLend = false;
         }
 
-        
+
         // ReSharper disable once FunctionRecursiveOnAllPaths
         public IEnumerator GetEnumerator() {
             return GetEnumerator();

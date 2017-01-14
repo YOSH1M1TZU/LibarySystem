@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
 using LibarySystem.Core.Interfaces;
 using LibarySystem.Core.Objects;
 using MySql.Data.MySqlClient;
@@ -23,10 +16,10 @@ namespace LibarySystem.SQLDataReader {
         public void AddStudent(Student student) {
             try {
                 MySqlConnection.Open();
-                MySqlCommand command =
+                var command =
                     new MySqlCommand("insert into student (PESEL,Name,Surname,Class) values (" + '"' +
-                                     student.PESEL + '"' + "," + '"' + student.Name.ToString() + '"' + "," + '"' +
-                                     student.Surname.ToString() + '"' + "," + '"' + student.Class.ToString() + '"' +
+                                     student.PESEL + '"' + "," + '"' + student.Name + '"' + "," + '"' +
+                                     student.Surname + '"' + "," + '"' + student.Class + '"' +
                                      ");");
                 command.Connection = MySqlConnection;
                 command.Prepare();
@@ -41,12 +34,23 @@ namespace LibarySystem.SQLDataReader {
         }
 
         public void ModifyStudent(string pesel) {
-            //delete from student where PESEL=pesel;
             throw new NotImplementedException();
         }
 
         public void DeleteStudent(string pesel) {
-            throw new NotImplementedException();
+            try {
+                MySqlConnection.Open();
+                var command = new MySqlCommand("delete from student where PESEL=" + pesel + ";");
+                command.Connection = MySqlConnection;
+                command.Prepare();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException exception) {
+                throw exception;
+            }
+            finally {
+                MySqlConnection?.Close();
+            }
         }
 
     }
