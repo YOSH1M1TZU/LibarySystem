@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="BTNAdd" Content="Dodaj" HorizontalAlignment="Left" Margin="87,158,0,0" VerticalAlignment="Top"
+        <Button x:Name="BTNAdd" Content="Dodaj" HorizontalAlignment="Left" Margin="32,158,0,0" VerticalAlignment="Top"
                 Width="75" Click="BTNAdd_Click" />
         <Label Content="Imie:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" />
         <Label Content="Nazwisko:&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top"
@@ -25,5 +25,7 @@
         <TextBox x:Name="TXTBClass" HorizontalAlignment="Left" Height="23" Margin="115,116.656,0,0"
                  VerticalAlignment="Top"
                  Width="120" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
+        <Button x:Name="BTNDelete" Content="Usun" HorizontalAlignment="Left" Margin="165,158,0,0"
+                VerticalAlignment="Top" Width="75" Click="BTNDelete_Click" />
     </Grid>
 </Window>
