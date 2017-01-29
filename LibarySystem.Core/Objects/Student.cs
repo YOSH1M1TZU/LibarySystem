@@ -1,11 +1,17 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using LibarySystem.Core.Interfaces;
 
 namespace LibarySystem.Core.Objects {
 
     public class Student : IStudent {
 
-        public Student(string pesel, string name, string surname, string studentClass, string secondName = "") {
+        public Student() {
+            LendedBooks = new List<Book>();
+        }
+
+        public Student(string pesel, string name, string surname, string studentClass, string secondName = null) : this() {
             PESEL = pesel;
             Name = name;
             Surname = surname;
@@ -17,7 +23,8 @@ namespace LibarySystem.Core.Objects {
             return GetEnumerator();
         }
 
-        public string PESEL { get; }
+        [Key] public string PESEL { get; set; }
+        public List<Book> LendedBooks { get; set; }
         public string Name { get; set; }
         public string SecondName { get; set; }
         public string Surname { get; set; }

@@ -47,8 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201701291131556_Initial.cs" />
+    <Compile Include="Migrations\201701291131556_Initial.Designer.cs">
+      <DependentUpon>201701291131556_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StudentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentOperations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,6 +65,11 @@
       <Project>{a7138b9e-44b8-40c0-a9e4-0182cb9652b8}</Project>
       <Name>LibarySystem.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701291131556_Initial.resx">
+      <DependentUpon>201701291131556_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

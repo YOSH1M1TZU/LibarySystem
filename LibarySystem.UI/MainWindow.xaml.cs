@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using LibarySystem.Core.Objects;
-using LibarySystem.SQLDataReader;
+using LibarySystem.DataModel;
 
 namespace LibarySystem.UI {
 
@@ -27,25 +27,23 @@ namespace LibarySystem.UI {
                 MessageBox.Show("Podaj Nazwisko!", "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
             if (TXTBClass.Text == string.Empty) {
                 MessageBox.Show("Podaj klase do jakiej chodzi uczen!", "Libary System", MessageBoxButton.OK,
                     MessageBoxImage.Error);
                 return;
             }
 
-            var sqlWorker = new SqlWorker();
+            var student = new Student(TXTBPesel.Text, TXTBName.Text, TXTBSurname.Text, TXTBClass.Text);
 
             try {
-                var studentToAdd = new Student(TXTBPesel.Text, TXTBName.Text, TXTBSurname.Text, TXTBClass.Text);
-
-                sqlWorker.AddStudent(studentToAdd);
-                MessageBox.Show("Uczen zostal poprawnie dodany!", "Libary System", MessageBoxButton.OK,
+                StudentOperations.AddStudent(student);
+                MessageBox.Show("Uczen zostal dodany poprawnie!", "Libary System", MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
             catch (Exception exception) {
                 MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK,
                     MessageBoxImage.Error);
+                throw exception;
             }
         }
 
@@ -54,16 +52,17 @@ namespace LibarySystem.UI {
                 MessageBox.Show("Podaj poprawny PESEL!", "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
             try {
-                var sqlWorker = new SqlWorker();
-                sqlWorker.DeleteStudent(TXTBPesel.Text);
+                StudentOperations.DeleteStudentWithPesel(TXTBPesel.Text);
                 MessageBox.Show("Uczen zostal poprawnie usuniety!", "Libary System", MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
+            catch (NullReferenceException exception) {
+                MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             catch (Exception exception) {
-                MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
+                throw new Exception();
             }
         }
 

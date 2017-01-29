@@ -106,6 +106,10 @@
       <Project>{a7138b9e-44b8-40c0-a9e4-0182cb9652b8}</Project>
       <Name>LibarySystem.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LibarySystem.DataModel\LibarySystem.DataModel.csproj">
+      <Project>{5f2fd30d-759b-48f4-95b8-2ab11c6874ff}</Project>
+      <Name>LibarySystem.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
