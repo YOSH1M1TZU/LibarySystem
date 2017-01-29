@@ -11,7 +11,8 @@ namespace LibarySystem.Core.Objects {
             LendedBooks = new List<Book>();
         }
 
-        public Student(string pesel, string name, string surname, string studentClass, string secondName = null) : this() {
+        public Student(string pesel, string name, string surname, string studentClass, string secondName = null)
+            : this() {
             PESEL = pesel;
             Name = name;
             Surname = surname;
@@ -19,12 +20,15 @@ namespace LibarySystem.Core.Objects {
             SecondName = secondName;
         }
 
+        public List<Book> LendedBooks { get; set; }
+
         public IEnumerator GetEnumerator() {
             return GetEnumerator();
         }
 
-        [Key] public string PESEL { get; set; }
-        public List<Book> LendedBooks { get; set; }
+        [Key]
+        public string PESEL { get; set; }
+
         public string Name { get; set; }
         public string SecondName { get; set; }
         public string Surname { get; set; }

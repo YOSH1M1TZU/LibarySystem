@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using LibarySystem.Core.Objects;
 
 namespace LibarySystem.DataModel {
@@ -16,9 +15,7 @@ namespace LibarySystem.DataModel {
         public static void DeleteStudentWithPesel(string pesel) {
             using (var context = new StudentContext()) {
                 var student = context.Students.Find(pesel);
-                if (student == null) {
-                    throw new NullReferenceException("Nie znaleziono studenta w bazie danych...");
-                }
+                if (student == null) throw new NullReferenceException("Nie znaleziono studenta w bazie danych...");
                 context.Students.Remove(student);
                 context.SaveChanges();
             }

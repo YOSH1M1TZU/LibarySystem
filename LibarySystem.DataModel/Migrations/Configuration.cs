@@ -1,19 +1,14 @@
-namespace LibarySystem.DataModel.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LibarySystem.DataModel.StudentContext>
-    {
-        public Configuration()
-        {
+namespace LibarySystem.DataModel.Migrations {
+
+    internal sealed class Configuration : DbMigrationsConfiguration<StudentContext> {
+
+        public Configuration() {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(LibarySystem.DataModel.StudentContext context)
-        {
+        protected override void Seed(StudentContext context) {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -27,5 +22,7 @@ namespace LibarySystem.DataModel.Migrations
             //    );
             //
         }
+
     }
+
 }
