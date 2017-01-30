@@ -21,6 +21,14 @@ namespace LibarySystem.DataModel {
             }
         }
 
+        public static void ModifyStudentWithPesel(string pesel, Student student) {
+            using (var context = new StudentContext()) {
+                var _student = context.Students.Find(pesel);
+                _student = student;
+                context.SaveChanges();
+            }
+        }
+
     }
 
 }
