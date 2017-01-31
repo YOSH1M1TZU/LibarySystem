@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministratorOperations.cs" />
     <Compile Include="Migrations\201701291131556_Initial.cs" />
     <Compile Include="Migrations\201701291131556_Initial.Designer.cs">
       <DependentUpon>201701291131556_Initial.cs</DependentUpon>
@@ -57,9 +56,10 @@
       <DependentUpon>201701301731314_AdministratorAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Operations\AdministratorOperations.cs" />
+    <Compile Include="Operations\StudentOperations.cs" />
     <Compile Include="StudentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentOperations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

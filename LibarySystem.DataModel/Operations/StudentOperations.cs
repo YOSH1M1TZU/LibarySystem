@@ -1,7 +1,7 @@
 ﻿using System;
 using LibarySystem.Core.Objects;
 
-namespace LibarySystem.DataModel {
+namespace LibarySystem.DataModel.Operations {
 
     public static class StudentOperations {
 

@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI"
         mc:Ignorable="d"
-        Title="Logowanie do systemu" Height="188.934" Width="364.588">
+        Title="Logowanie do systemu" Height="188.934" Width="224.588" ResizeMode="NoResize">
     <Grid Margin="1,0,-1,0">
-        <Button x:Name="BTNSingIn" Content="Zaloguj" HorizontalAlignment="Left" Margin="133,106,0,0"
-                VerticalAlignment="Top" Width="75" Click="BTNSingIn_Click" />
-        <TextBox x:Name="TXTLogin" HorizontalAlignment="Left" Height="23" Margin="133,34,0,0" TextWrapping="Wrap"
+        <Button x:Name="BTNSingIn" Content="Zaloguj" HorizontalAlignment="Left" Margin="74,105,0,0"
+                VerticalAlignment="Top" Width="74" Click="BTNSingIn_Click" />
+        <TextBox x:Name="TXTLogin" HorizontalAlignment="Left" Height="23" Margin="67,33,0,0" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="120" />
-        <Label Content="Login:" HorizontalAlignment="Left" Margin="86,31,0,0" VerticalAlignment="Top"
+        <Label Content="Login:" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"
                RenderTransformOrigin="-0.173,0.171" />
-        <Label Content="Hasło:" HorizontalAlignment="Left" Margin="85,57,0,0" VerticalAlignment="Top" />
-        <PasswordBox x:Name="TXTPassword" HorizontalAlignment="Left" Margin="133,60,0,0" VerticalAlignment="Top"
+        <Label Content="Hasło:" HorizontalAlignment="Left" Margin="19,56,0,0" VerticalAlignment="Top" />
+        <PasswordBox x:Name="TXTPassword" HorizontalAlignment="Left" Margin="67,59,0,0" VerticalAlignment="Top"
                      Width="120" Height="23" />
 
     </Grid>

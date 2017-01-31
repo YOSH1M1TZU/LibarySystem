@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using LibarySystem.Core.Interfaces;
 
 namespace LibarySystem.Core.Objects {
 
-    public class Student : IStudent {
+    public class Student {
 
         public Student() {
             LendedBooks = new List<Book>();
@@ -20,12 +18,6 @@ namespace LibarySystem.Core.Objects {
             SecondName = secondName;
         }
 
-        public List<Book> LendedBooks { get; set; }
-
-        public IEnumerator GetEnumerator() {
-            return GetEnumerator();
-        }
-
         [Key]
         public string PESEL { get; set; }
 
@@ -33,10 +25,7 @@ namespace LibarySystem.Core.Objects {
         public string SecondName { get; set; }
         public string Surname { get; set; }
         public string Class { get; set; }
-
-        public override string ToString() {
-            return "Name: " + Name + " " + SecondName + ". Class: " + Class + " PESEL: " + PESEL;
-        }
+        public List<Book> LendedBooks { get; set; }
 
     }
 

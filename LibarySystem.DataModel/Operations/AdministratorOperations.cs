@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibarySystem.DataModel {
+namespace LibarySystem.DataModel.Operations {
 
     public static class AdministratorOperations {
 

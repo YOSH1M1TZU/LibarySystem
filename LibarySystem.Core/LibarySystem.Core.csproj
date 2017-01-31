@@ -47,9 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IBook.cs" />
-    <Compile Include="Interfaces\IDataReader.cs" />
-    <Compile Include="Interfaces\IStudent.cs" />
     <Compile Include="Objects\Administrator.cs" />
     <Compile Include="Objects\Book.cs" />
     <Compile Include="Objects\Student.cs" />

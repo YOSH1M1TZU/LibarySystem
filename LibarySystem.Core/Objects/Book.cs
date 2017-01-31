@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.ComponentModel.DataAnnotations;
-using LibarySystem.Core.Interfaces;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace LibarySystem.Core.Objects {
 
-    public class Book : IBook {
+    public class Book {
 
         public Book() {
             IsLend = false;
@@ -16,22 +14,12 @@ namespace LibarySystem.Core.Objects {
             Author = author;
         }
 
-
-        // ReSharper disable once FunctionRecursiveOnAllPaths
-        public IEnumerator GetEnumerator() {
-            return GetEnumerator();
-        }
-
         [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }
         public string Author { get; set; }
         public bool IsLend { get; set; }
-
-        public override string ToString() {
-            return $"Book {Name} Author: {Author} Lended? {IsLend}. This book has ID: {Id}";
-        }
 
     }
 

@@ -1,0 +1,17 @@
+﻿<Window x:Class="LibarySystem.UI.Adding_Windows.DeleteStudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
+        mc:Ignorable="d"
+        Title="Delete Student" Height="164.789" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="61,26,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="TXTBPesel" HorizontalAlignment="Left" Height="23" Margin="105,29,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="120" />
+        <Button x:Name="BTNDelete" Content="Usun" HorizontalAlignment="Left" Margin="113,78,0,0"
+                VerticalAlignment="Top" Width="75" Click="BTNDelete_Click" />
+
+    </Grid>
+</Window>
