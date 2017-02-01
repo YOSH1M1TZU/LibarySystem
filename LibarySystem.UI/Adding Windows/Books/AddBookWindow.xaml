@@ -1,0 +1,24 @@
+﻿<Window x:Class="LibarySystem.UI.Adding_Windows.Books.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
+        mc:Ignorable="d"
+        Title="Add Book" Height="184" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="BTNAddBook" Content="Dodaj" HorizontalAlignment="Left" Margin="113,115,0,0"
+                VerticalAlignment="Top" Width="75" Click="BTNAddBook_Click" />
+        <Label Content="Numer identyfikacyjny:" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top"
+               Height="28" />
+        <TextBox x:Name="TXTBookId" HorizontalAlignment="Left" Height="23" Margin="153,16,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="120" />
+        <Label Content="Tytul:" HorizontalAlignment="Left" Margin="113,42,0,0" VerticalAlignment="Top" Height="25" />
+        <TextBox x:Name="TXTBookName" HorizontalAlignment="Left" Height="23" Margin="153,44,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="120" />
+        <Label Content="Autor:" HorizontalAlignment="Left" Margin="108,70,0,0" VerticalAlignment="Top" Height="23" />
+        <TextBox x:Name="TXTBookAuthor" HorizontalAlignment="Left" Height="23" Margin="153,72,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="120" />
+
+    </Grid>
+</Window>

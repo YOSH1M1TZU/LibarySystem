@@ -1,5 +1,6 @@
 ﻿using System.Windows;
-using LibarySystem.UI.Adding_Windows;
+using LibarySystem.UI.Adding_Windows.Books;
+using LibarySystem.UI.Adding_Windows.Students;
 
 namespace LibarySystem.UI {
 
@@ -20,6 +21,11 @@ namespace LibarySystem.UI {
         private void DeleteStudent_Click(object sender, RoutedEventArgs e) {
             var deleteStudentWindow = new DeleteStudentWindow();
             deleteStudentWindow.Show();
+        }
+
+        private void BtnAddBook_Click(object sender, RoutedEventArgs e) {
+            var addBookWindow = new AddBookWindow();
+            addBookWindow.Show();
         }
 
     }

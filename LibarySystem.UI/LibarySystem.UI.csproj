@@ -80,20 +80,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Adding Windows\AddStudentWindow.xaml.cs">
+    <Compile Include="Adding Windows\Books\AddBookWindow.xaml.cs">
+      <DependentUpon>AddBookWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adding Windows\Students\AddStudentWindow.xaml.cs">
       <DependentUpon>AddStudentWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Adding Windows\DeleteStudentWindow.xaml.cs">
+    <Compile Include="Adding Windows\Students\DeleteStudentWindow.xaml.cs">
       <DependentUpon>DeleteStudentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SingInWindow.xaml.cs">
       <DependentUpon>SingInWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Adding Windows\AddStudentWindow.xaml">
+    <Page Include="Adding Windows\Books\AddBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Adding Windows\DeleteStudentWindow.xaml">
+    <Page Include="Adding Windows\Students\AddStudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Adding Windows\Students\DeleteStudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,5 +170,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@
         <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="523,51,0,0"
                 VerticalAlignment="Top" Width="90" Click="BtnAddStudent_Click" />
         <Button x:Name="BtnAddBook" Content="Dodaj Ksiazke" HorizontalAlignment="Left" Margin="523,140,0,0"
-                VerticalAlignment="Top" Width="90" />
+                VerticalAlignment="Top" Width="90" Click="BtnAddBook_Click" />
         <Button x:Name="DeleteStudent" Content="Usun Ucznia" HorizontalAlignment="Left" Margin="523,94,0,0"
                 VerticalAlignment="Top" Width="90" Click="DeleteStudent_Click" />
     </Grid>

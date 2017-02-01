@@ -10,12 +10,12 @@
         <Button x:Name="BTNSingIn" Content="Zaloguj" HorizontalAlignment="Left" Margin="74,105,0,0"
                 VerticalAlignment="Top" Width="74" Click="BTNSingIn_Click" />
         <TextBox x:Name="TXTLogin" HorizontalAlignment="Left" Height="23" Margin="67,33,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120" />
+                 VerticalAlignment="Top" Width="120" Text="KSYMEK" />
         <Label Content="Login:" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"
                RenderTransformOrigin="-0.173,0.171" />
         <Label Content="Hasło:" HorizontalAlignment="Left" Margin="19,56,0,0" VerticalAlignment="Top" />
         <PasswordBox x:Name="TXTPassword" HorizontalAlignment="Left" Margin="67,59,0,0" VerticalAlignment="Top"
-                     Width="120" Height="23" />
+                     Width="120" Height="23" Password="password" />
 
     </Grid>
 </Window>

@@ -3,7 +3,7 @@ using System.Windows;
 using LibarySystem.Core.Objects;
 using LibarySystem.DataModel.Operations;
 
-namespace LibarySystem.UI.Adding_Windows {
+namespace LibarySystem.UI.Adding_Windows.Students {
 
     /// <summary>
     ///     Interaction logic for AddStudentWindow.xaml

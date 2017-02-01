@@ -2,7 +2,7 @@
 using System.Windows;
 using LibarySystem.DataModel.Operations;
 
-namespace LibarySystem.UI.Adding_Windows {
+namespace LibarySystem.UI.Adding_Windows.Students {
 
     /// <summary>
     ///     Interaction logic for DeleteStudent.xaml

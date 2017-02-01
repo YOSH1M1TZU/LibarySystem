@@ -26,7 +26,6 @@ namespace LibarySystem.UI {
 
             try {
                 if (AdministratorOperations.LoggingIn(TXTLogin.Text, TXTPassword.Password)) {
-                    //If password and login correct
                     var mainWindow = new MainWindow();
                     mainWindow.Show();
                     Close();

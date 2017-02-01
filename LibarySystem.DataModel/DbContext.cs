@@ -3,7 +3,7 @@ using LibarySystem.Core.Objects;
 
 namespace LibarySystem.DataModel {
 
-    public class StudentContext : DbContext {
+    public class DbContext : System.Data.Entity.DbContext {
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Book> Books { get; set; }
