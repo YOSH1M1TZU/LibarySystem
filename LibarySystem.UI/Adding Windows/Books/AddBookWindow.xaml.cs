@@ -46,6 +46,9 @@ namespace LibarySystem.UI.Adding_Windows.Books {
             }
         }
 
+        private async void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) {
+        }
+
     }
 
 }

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
         mc:Ignorable="d"
-        Title="Add Book" Height="184" Width="300" ResizeMode="NoResize">
+        Title="Add Book" Height="184" Width="300" ResizeMode="NoResize" Closing="Window_Closing">
     <Grid>
         <Button x:Name="BTNAddBook" Content="Dodaj" HorizontalAlignment="Left" Margin="113,115,0,0"
                 VerticalAlignment="Top" Width="75" Click="BTNAddBook_Click" />
-        <Label Content="Numer identyfikacyjny:" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top"
+        <Label Content="Numer katalogowy:" HorizontalAlignment="Left" Margin="37,14,0,0" VerticalAlignment="Top"
                Height="28" />
         <TextBox x:Name="TXTBookId" HorizontalAlignment="Left" Height="23" Margin="153,16,0,0" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="120" />

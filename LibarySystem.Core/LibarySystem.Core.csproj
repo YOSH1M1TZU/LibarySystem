@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Delegates\ChangedEventHandler.cs" />
     <Compile Include="Objects\Administrator.cs" />
     <Compile Include="Objects\Book.cs" />
     <Compile Include="Objects\Student.cs" />

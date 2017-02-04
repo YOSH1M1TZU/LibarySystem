@@ -1,17 +1,63 @@
-﻿<Window x:Class="LibarySystem.UI.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LibarySystem.UI"
-        mc:Ignorable="d"
-        Title="Libary System" Height="437.817" Width="665.141">
-    <Grid>
-        <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="523,51,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnAddStudent_Click" />
-        <Button x:Name="BtnAddBook" Content="Dodaj Ksiazke" HorizontalAlignment="Left" Margin="523,140,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnAddBook_Click" />
-        <Button x:Name="DeleteStudent" Content="Usun Ucznia" HorizontalAlignment="Left" Margin="523,94,0,0"
-                VerticalAlignment="Top" Width="90" Click="DeleteStudent_Click" />
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:LibarySystem.UI"
+    xmlns:DataModel="clr-namespace:LibarySystem.DataModel;assembly=LibarySystem.DataModel"
+    xmlns:Objects="clr-namespace:LibarySystem.Core.Objects;assembly=LibarySystem.Core"
+    x:Class="LibarySystem.UI.MainWindow"
+    mc:Ignorable="d"
+    Title="Libary System" Height="548.317" Width="1116.866" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Window.Resources>
+        <CollectionViewSource x:Key="dbContextViewSource"
+                              d:DesignSource="{d:DesignInstance {x:Type DataModel:DbContext}, CreateList=True}" />
+        <CollectionViewSource x:Key="dbContextStudentsViewSource"
+                              Source="{Binding Students, Source={StaticResource dbContextViewSource}}" />
+        <CollectionViewSource x:Key="dbContextBooksViewSource"
+                              Source="{Binding Books, Source={StaticResource dbContextViewSource}}" />
+        <CollectionViewSource x:Key="studentViewSource"
+                              d:DesignSource="{d:DesignInstance {x:Type Objects:Student}, CreateList=True}" />
+        <CollectionViewSource x:Key="bookViewSource"
+                              d:DesignSource="{d:DesignInstance {x:Type Objects:Book}, CreateList=True}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource dbContextStudentsViewSource}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="718*" />
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition Width="393*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="9,487,0,0"
+                VerticalAlignment="Top" Width="90" Click="BtnAddStudent_Click" Grid.Column="2" Height="20" />
+        <Button x:Name="BtnAddBook" Content="Dodaj Ksiazke" HorizontalAlignment="Left" Margin="104,487,0,0"
+                VerticalAlignment="Top" Width="90" Click="BtnAddBook_Click" Grid.Column="2" Height="20" />
+        <Button x:Name="DeleteStudent" Content="Usun Ucznia" HorizontalAlignment="Left" Margin="199,487,0,0"
+                VerticalAlignment="Top" Width="90" Click="DeleteStudent_Click" Grid.Column="2" Height="20" />
+        <Button x:Name="BtnDeleteBook" Content="Usun Ksiazke" HorizontalAlignment="Left" Margin="294,487,0,0"
+                VerticalAlignment="Top" Width="90" Click="BtnDeleteBook_Click" Grid.Column="2" Height="20" />
+        <DataGrid x:Name="studentDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
+                  ItemsSource="{Binding Source={StaticResource studentViewSource}}" Margin="10,10,368,10"
+                  RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Imie" Width="70" />
+                <DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Surname}" Header="Nazwisko"
+                                    Width="95" />
+                <DataGridTextColumn x:Name="secondNameColumn" Binding="{Binding SecondName}" Header="Drugie imie"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="pESELColumn" Binding="{Binding PESEL}" Header="PESEL" Width="80" />
+                <DataGridTextColumn x:Name="classColumn" Binding="{Binding Class}" Header="Klasa" Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="bookDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
+                  ItemsSource="{Binding Source={StaticResource bookViewSource}}" Margin="354,10,10,10"
+                  RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="catalogueNumberColumn" Binding="{Binding CatalogueNumber}"
+                                    Header="Nr.Katalogowy" Width="90" />
+                <DataGridTextColumn x:Name="nameColumn1" Binding="{Binding Name}" Header="Tytuł" Width="130" />
+                <DataGridTextColumn x:Name="authorColumn" Binding="{Binding Author}" Header="Autor"
+                                    Width="103" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

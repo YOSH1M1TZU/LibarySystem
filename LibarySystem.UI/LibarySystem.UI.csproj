@@ -83,6 +83,9 @@
     <Compile Include="Adding Windows\Books\AddBookWindow.xaml.cs">
       <DependentUpon>AddBookWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Adding Windows\Books\DeleteBookWindow.xaml.cs">
+      <DependentUpon>DeleteBookWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Adding Windows\Students\AddStudentWindow.xaml.cs">
       <DependentUpon>AddStudentWindow.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <DependentUpon>SingInWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Adding Windows\Books\AddBookWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Adding Windows\Books\DeleteBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +147,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LibarySystem.Core.Objects.Book.datasource" />
+    <None Include="Properties\DataSources\LibarySystem.Core.Objects.Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.ExceptionServices;
 using System.Windows;
 using LibarySystem.DataModel.Operations;
 
@@ -13,7 +14,7 @@ namespace LibarySystem.UI {
             InitializeComponent();
         }
 
-        private void BTNSingIn_Click(object sender, RoutedEventArgs e) {
+        private async void BTNSingIn_Click(object sender, RoutedEventArgs e) {
             if (TXTLogin.Text == string.Empty) {
                 MessageBox.Show("Podaj login!", "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -25,14 +26,18 @@ namespace LibarySystem.UI {
             }
 
             try {
-                if (AdministratorOperations.LoggingIn(TXTLogin.Text, TXTPassword.Password)) {
+                BTNSingIn.IsEnabled = false;
+                if (await AdministratorOperations.LogInAsync(TXTLogin.Text, TXTPassword.Password)) {
                     var mainWindow = new MainWindow();
                     mainWindow.Show();
                     Close();
                 }
             }
             catch (Exception exception) {
-                MessageBox.Show(exception.Message, "Libary System", MessageBoxButton.OK, MessageBoxImage.Error);
+                var capturedException = ExceptionDispatchInfo.Capture(exception);
+                BTNSingIn.IsEnabled = true;
+                MessageBox.Show(capturedException.SourceException.Message, "Libary System", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
