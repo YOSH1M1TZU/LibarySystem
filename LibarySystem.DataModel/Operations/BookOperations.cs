@@ -15,8 +15,8 @@ namespace LibarySystem.DataModel.Operations {
             using (var context = new DbContext()) {
                 context.Books.Add(book);
                 context.SaveChanges();
-                BookAddedOrDeleted(EventArgs.Empty);
             }
+            BookAddedOrDeleted?.Invoke(EventArgs.Empty);
         }
 
         public static void DeleteBook(string catalogueNumber) {
@@ -24,9 +24,9 @@ namespace LibarySystem.DataModel.Operations {
                 var book = context.Books.Find(catalogueNumber);
                 if (book == null) throw new NullReferenceException("Nie znaleziono ksiazki w bazie danych");
                 context.Books.Remove(book);
-                context.SaveChanges();
-                BookAddedOrDeleted(EventArgs.Empty);
+                context.SaveChanges();        
             }
+            BookAddedOrDeleted?.Invoke(EventArgs.Empty);
         }
 
         public static async Task<List<Book>> BooksToListAsync() {

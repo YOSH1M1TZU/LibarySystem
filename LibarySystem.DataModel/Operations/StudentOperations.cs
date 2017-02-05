@@ -14,9 +14,9 @@ namespace LibarySystem.DataModel.Operations {
         public static void AddStudent(Student student) {
             using (var context = new DbContext()) {
                 context.Students.Add(student);
-                context.SaveChanges();
-                StudentAddedOrDeleted(EventArgs.Empty);
+                context.SaveChanges();                
             }
+            StudentAddedOrDeleted?.Invoke(EventArgs.Empty);
         }
 
         public static void DeleteStudentWithPesel(string pesel) {
@@ -25,16 +25,8 @@ namespace LibarySystem.DataModel.Operations {
                 if (student == null) throw new NullReferenceException("Nie znaleziono studenta w bazie danych...");
                 context.Students.Remove(student);
                 context.SaveChanges();
-                StudentAddedOrDeleted(EventArgs.Empty);
             }
-        }
-
-        public static void ModifyStudentWithPesel(string pesel, Student student) {
-            using (var context = new DbContext()) {
-                var _student = context.Students.Find(pesel);
-                _student = student;
-                context.SaveChanges();
-            }
+            StudentAddedOrDeleted?.Invoke(EventArgs.Empty);
         }
 
         public static async Task<List<Student>> StudentsToListAsync() {

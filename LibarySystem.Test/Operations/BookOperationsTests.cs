@@ -8,16 +8,16 @@ namespace LibarySystem.Test.Operations {
 
     [TestClass]
     public class BookOperationsTests {
-
         [TestMethod]
         public void AddAndDeleteBookTest() {
+
             using (var context = new DbContext()) {
-                var book = new Book("E21-01", "Pan Tadeusz", "Adam Mickiewicz");
+                var book = new Book("test", "test", "test");
                 BookOperations.AddBook(book);
 
                 var bookInDb = context.Books.Find(book.CatalogueNumber);
 
-                if (bookInDb == null) return;
+                if (bookInDb == null) throw new NullReferenceException();
 
                 Assert.AreEqual(book.CatalogueNumber, bookInDb.CatalogueNumber);
                 Assert.AreEqual(book.Name, bookInDb.Name);
