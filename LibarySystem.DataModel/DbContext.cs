@@ -7,6 +7,7 @@ namespace LibarySystem.DataModel {
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<LendedBook> LendedBooks { get; set; }
         public DbSet<Administrator> Administrators { get; set; }
 
     }

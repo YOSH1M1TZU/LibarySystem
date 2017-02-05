@@ -6,7 +6,7 @@ namespace LibarySystem.Core.Objects {
     public class Student {
 
         public Student() {
-            LendedBooks = new List<Book>();
+            LendedBooks = new List<LendedBook>();
         }
 
         public Student(string pesel, string name, string surname, string studentClass, string secondName = null)
@@ -25,7 +25,7 @@ namespace LibarySystem.Core.Objects {
         public string SecondName { get; set; }
         public string Surname { get; set; }
         public string Class { get; set; }
-        public List<Book> LendedBooks { get; set; }
+        public virtual List<LendedBook> LendedBooks { get; set; }
 
     }
 

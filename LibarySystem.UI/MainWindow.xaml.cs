@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
+using LibarySystem.Core.Objects;
 using LibarySystem.DataModel.Operations;
 using LibarySystem.UI.Adding_Windows.Books;
 using LibarySystem.UI.Adding_Windows.Students;
@@ -9,10 +11,18 @@ namespace LibarySystem.UI {
 
     public partial class MainWindow : Window {
 
+        private Book selectedBook;
+
+        private Student selectedStudent;
+
         public MainWindow() {
             InitializeComponent();
-            StudentOperations.StudentAddedOrDeleted += async (e) => { await RefreshStudentsDataGride(); };
-            BookOperations.BookAddedOrDeleted += async (e) => { await RefreshBooksDataGride(); };
+            StudentOperations.StudentAddedOrDeleted += async e => { await RefreshStudentsDataGride(); };
+            BookOperations.BookAddedOrDeleted += async e => { await RefreshBooksDataGride(); };
+            LendedBookOperations.ReturnedOrLendedBook += async e => {
+                await RefreshLendDataGride();
+                await RefreshBooksDataGride();
+            };
         }
 
         private void BtnAddStudent_Click(object sender, RoutedEventArgs e) {
@@ -54,6 +64,31 @@ namespace LibarySystem.UI {
             var bookViewSource =
                 (CollectionViewSource) FindResource("bookViewSource");
             bookViewSource.Source = await BookOperations.BooksToListAsync();
+        }
+
+        private async void studentDataGrid_SelectionChanged(object sender,
+            SelectionChangedEventArgs e) {
+            if (studentDataGrid.CurrentCell.Item == DependencyProperty.UnsetValue) return;
+            selectedStudent = (Student) studentDataGrid.CurrentCell.Item;
+            TXTSelectedStudent.Text = selectedStudent.PESEL;
+            await RefreshLendDataGride();
+        }
+
+        private void bookDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            if (bookDataGrid.CurrentCell.Item == DependencyProperty.UnsetValue) return;
+            selectedBook = (Book) bookDataGrid.CurrentCell.Item;
+            TXTSelectedBook.Text = selectedBook.CatalogueNumber;
+        }
+
+        private void BTNAddBookToStudent_Click(object sender, RoutedEventArgs e) {
+            if (DPDateOfReturn.SelectedDate != null && selectedStudent != null && selectedBook != null)
+                LendedBookOperations.LendBook(selectedStudent, selectedBook, DPDateOfReturn.SelectedDate.Value);
+        }
+
+        private async Task RefreshLendDataGride() {
+            var lendedBookViewSource =
+                (CollectionViewSource) FindResource("lendedBookViewSource");
+            lendedBookViewSource.Source = await LendedBookOperations.LendedBooksToListAsync(selectedStudent);
         }
 
     }

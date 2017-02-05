@@ -33,7 +33,7 @@ namespace LibarySystem.DataModel.Operations {
             var result = await Task.Run(() => {
                 using (var context = new DbContext()) {
                     var listOfBooks = new List<Book>();
-                    listOfBooks = context.Books.Where(s => s.CatalogueNumber != null).ToList();
+                    listOfBooks = context.Books.Where(s => s.CatalogueNumber != null && s.IsLended == false).ToList();
                     return listOfBooks;
                 }
             });

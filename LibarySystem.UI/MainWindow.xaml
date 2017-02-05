@@ -8,7 +8,7 @@
     xmlns:Objects="clr-namespace:LibarySystem.Core.Objects;assembly=LibarySystem.Core"
     x:Class="LibarySystem.UI.MainWindow"
     mc:Ignorable="d"
-    Title="Libary System" Height="548.317" Width="1116.866" Loaded="Window_Loaded" ResizeMode="NoResize">
+    Title="Libary System" Height="548.317" Width="1239.866" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Window.Resources>
         <CollectionViewSource x:Key="dbContextViewSource"
                               d:DesignSource="{d:DesignInstance {x:Type DataModel:DbContext}, CreateList=True}" />
@@ -20,24 +20,29 @@
                               d:DesignSource="{d:DesignInstance {x:Type Objects:Student}, CreateList=True}" />
         <CollectionViewSource x:Key="bookViewSource"
                               d:DesignSource="{d:DesignInstance {x:Type Objects:Book}, CreateList=True}" />
+        <CollectionViewSource x:Key="studentLendedBooksViewSource"
+                              Source="{Binding LendedBooks, Source={StaticResource studentViewSource}}" />
+        <CollectionViewSource x:Key="lendedBookViewSource"
+                              d:DesignSource="{d:DesignInstance {x:Type Objects:LendedBook}, CreateList=True}" />
     </Window.Resources>
     <Grid DataContext="{StaticResource dbContextStudentsViewSource}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="718*" />
+            <ColumnDefinition Width="712*" />
+            <ColumnDefinition />
             <ColumnDefinition Width="0*" />
-            <ColumnDefinition Width="393*"/>
+            <ColumnDefinition Width="521*" />
         </Grid.ColumnDefinitions>
-        <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="9,487,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnAddStudent_Click" Grid.Column="2" Height="20" />
-        <Button x:Name="BtnAddBook" Content="Dodaj Ksiazke" HorizontalAlignment="Left" Margin="104,487,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnAddBook_Click" Grid.Column="2" Height="20" />
-        <Button x:Name="DeleteStudent" Content="Usun Ucznia" HorizontalAlignment="Left" Margin="199,487,0,0"
-                VerticalAlignment="Top" Width="90" Click="DeleteStudent_Click" Grid.Column="2" Height="20" />
-        <Button x:Name="BtnDeleteBook" Content="Usun Ksiazke" HorizontalAlignment="Left" Margin="294,487,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnDeleteBook_Click" Grid.Column="2" Height="20" />
+        <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="77,489,0,0"
+                VerticalAlignment="Top" Width="90" Click="BtnAddStudent_Click" Grid.Column="3" Height="20" />
+        <Button x:Name="BtnAddBook" Content="Dodaj Ksiazke" HorizontalAlignment="Left" Margin="172,489,0,0"
+                VerticalAlignment="Top" Width="90" Click="BtnAddBook_Click" Grid.Column="3" Height="20" />
+        <Button x:Name="DeleteStudent" Content="Usun Ucznia" HorizontalAlignment="Left" Margin="267,489,0,0"
+                VerticalAlignment="Top" Width="90" Click="DeleteStudent_Click" Grid.Column="3" Height="20" />
+        <Button x:Name="BtnDeleteBook" Content="Usun Ksiazke" HorizontalAlignment="Left" Margin="362,489,0,0"
+                VerticalAlignment="Top" Width="90" Click="BtnDeleteBook_Click" Grid.Column="3" Height="20" />
         <DataGrid x:Name="studentDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
-                  ItemsSource="{Binding Source={StaticResource studentViewSource}}" Margin="10,10,368,10"
-                  RowDetailsVisibilityMode="VisibleWhenSelected">
+                  ItemsSource="{Binding Source={StaticResource studentViewSource}}" Margin="10,10,363,10"
+                  RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="studentDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Imie" Width="70" />
                 <DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Surname}" Header="Nazwisko"
@@ -49,14 +54,52 @@
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="bookDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
-                  ItemsSource="{Binding Source={StaticResource bookViewSource}}" Margin="354,10,10,10"
-                  RowDetailsVisibilityMode="VisibleWhenSelected">
+                  ItemsSource="{Binding Source={StaticResource bookViewSource}}" Margin="354,10,9,10"
+                  RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="bookDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="catalogueNumberColumn" Binding="{Binding CatalogueNumber}"
                                     Header="Nr.Katalogowy" Width="90" />
                 <DataGridTextColumn x:Name="nameColumn1" Binding="{Binding Name}" Header="Tytuł" Width="130" />
                 <DataGridTextColumn x:Name="authorColumn" Binding="{Binding Author}" Header="Autor"
                                     Width="103" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Pesel:" Grid.Column="3" HorizontalAlignment="Left" Margin="118,16,0,0" VerticalAlignment="Top"
+               Height="26" Width="39" />
+        <Label Content="Książka:" Grid.Column="3" HorizontalAlignment="Left" Margin="115,48,0,0"
+               VerticalAlignment="Top" Height="26" Width="51" />
+        <TextBox x:Name="TXTSelectedStudent" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="177,19,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" />
+        <TextBox x:Name="TXTSelectedBook" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="177,51,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" />
+        <Button x:Name="BTNAddBookToStudent" Content="Dodaj książke" Grid.Column="3" HorizontalAlignment="Left"
+                Margin="362,54,0,0" VerticalAlignment="Top" Width="81" Click="BTNAddBookToStudent_Click" Height="20" />
+        <DatePicker x:Name="DPDateOfReturn" Grid.Column="3" HorizontalAlignment="Left" Margin="177,83,0,0"
+                    VerticalAlignment="Top" Width="120" SelectedDateFormat="Short" />
+        <Label Content="Data zwrotu:" Grid.Column="3" HorizontalAlignment="Left" Margin="91,81,0,0"
+               VerticalAlignment="Top" />
+        <DataGrid x:Name="lendedBookDataGrid" AutoGenerateColumns="False" Grid.Column="3"
+                  EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource lendedBookViewSource}}"
+                  Margin="10,123,10,196" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="catalogueNumberColumn1" Binding="{Binding CatalogueNumber}"
+                                    Header="Nr.Katalogowy" Width="90" />
+                <DataGridTemplateColumn x:Name="dateOfLendColumn" Header="Data wypozyczenia" Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker
+                                SelectedDate="{Binding DateOfLend, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="dateOfReturnColumn" Header="Data zwrotu" Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker
+                                SelectedDate="{Binding DateOfReturn, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

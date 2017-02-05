@@ -1,15 +1,14 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace LibarySystem.Core.Objects {
 
     public class Book {
 
         public Book() {
-            IsLend = false;
+            IsLended = false;
         }
 
-        public Book(string catalogueNumber, string name, string author) : this() {
+        public Book(string catalogueNumber, string name, string author) {
             CatalogueNumber = catalogueNumber;
             Name = name;
             Author = author;
@@ -20,9 +19,7 @@ namespace LibarySystem.Core.Objects {
 
         public string Name { get; set; }
         public string Author { get; set; }
-        public DateTime? DateOfLend { get; set; }
-        public DateTime? DateOfReturn { get; set; }
-        public bool IsLend { get; set; }
+        public bool IsLended { get; set; }
 
     }
 

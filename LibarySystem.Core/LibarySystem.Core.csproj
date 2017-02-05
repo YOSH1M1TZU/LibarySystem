@@ -50,6 +50,7 @@
     <Compile Include="Delegates\ChangedEventHandler.cs" />
     <Compile Include="Objects\Administrator.cs" />
     <Compile Include="Objects\Book.cs" />
+    <Compile Include="Objects\LendedBooks.cs" />
     <Compile Include="Objects\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

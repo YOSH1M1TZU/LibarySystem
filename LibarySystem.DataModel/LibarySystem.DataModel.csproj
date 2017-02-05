@@ -47,25 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201701291131556_Initial.cs" />
-    <Compile Include="Migrations\201701291131556_Initial.Designer.cs">
-      <DependentUpon>201701291131556_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201702051937369_NewInitDb.cs" />
+    <Compile Include="Migrations\201702051937369_NewInitDb.Designer.cs">
+      <DependentUpon>201702051937369_NewInitDb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701301731314_AdministratorAdded.cs" />
-    <Compile Include="Migrations\201701301731314_AdministratorAdded.Designer.cs">
-      <DependentUpon>201701301731314_AdministratorAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702011551039_BookChanges.cs" />
-    <Compile Include="Migrations\201702011551039_BookChanges.Designer.cs">
-      <DependentUpon>201702011551039_BookChanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702011625450_BookKey.cs" />
-    <Compile Include="Migrations\201702011625450_BookKey.Designer.cs">
-      <DependentUpon>201702011625450_BookKey.cs</DependentUpon>
+    <Compile Include="Migrations\201702052018354_BookIsLended.cs" />
+    <Compile Include="Migrations\201702052018354_BookIsLended.Designer.cs">
+      <DependentUpon>201702052018354_BookIsLended.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Operations\AdministratorOperations.cs" />
     <Compile Include="Operations\BookOperations.cs" />
+    <Compile Include="Operations\LendedBookOperations.cs" />
     <Compile Include="Operations\StudentOperations.cs" />
     <Compile Include="DbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,17 +74,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701291131556_Initial.resx">
-      <DependentUpon>201701291131556_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702051937369_NewInitDb.resx">
+      <DependentUpon>201702051937369_NewInitDb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701301731314_AdministratorAdded.resx">
-      <DependentUpon>201701301731314_AdministratorAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702011551039_BookChanges.resx">
-      <DependentUpon>201702011551039_BookChanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702011625450_BookKey.resx">
-      <DependentUpon>201702011625450_BookKey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702052018354_BookIsLended.resx">
+      <DependentUpon>201702052018354_BookIsLended.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace LibarySystem.DataModel.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class BookChanges : IMigrationMetadata
+    public sealed partial class BookIsLended : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(BookChanges));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(BookIsLended));
         
         string IMigrationMetadata.Id
         {
-            get { return "201702011551039_BookChanges"; }
+            get { return "201702052018354_BookIsLended"; }
         }
         
         string IMigrationMetadata.Source

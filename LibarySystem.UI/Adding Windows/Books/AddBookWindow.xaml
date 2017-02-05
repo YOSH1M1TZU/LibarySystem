@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
         mc:Ignorable="d"
-        Title="Add Book" Height="184" Width="300" ResizeMode="NoResize" Closing="Window_Closing">
+        Title="Add Book" Height="184" Width="300" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="BTNAddBook" Content="Dodaj" HorizontalAlignment="Left" Margin="113,115,0,0"
                 VerticalAlignment="Top" Width="75" Click="BTNAddBook_Click" />
