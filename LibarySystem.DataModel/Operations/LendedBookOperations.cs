@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using LibarySystem.Core.Delegates;
 using LibarySystem.Core.Objects;
@@ -26,8 +27,20 @@ namespace LibarySystem.DataModel.Operations {
                 findStudent.LendedBooks.Add(lendedBook);
                 findBook.IsLended = true;
                 context.SaveChanges();
-                ReturnedOrLendedBook(EventArgs.Empty);
             }
+            ReturnedOrLendedBook?.Invoke(EventArgs.Empty);
+        }
+
+        public static void ReturnBook(Student student, LendedBook lendedBook) {
+            using (var context = new DbContext()) {
+                var findLendedBook = context.LendedBooks.Find(lendedBook.Id);
+                var findBook = context.Books.Find(findLendedBook.CatalogueNumber);
+
+                findBook.IsLended = false;
+                context.LendedBooks.Remove(findLendedBook);
+                context.SaveChanges();
+            }
+            ReturnedOrLendedBook?.Invoke(EventArgs.Empty);
         }
 
         public static async Task<List<LendedBook>> LendedBooksToListAsync(Student student) {

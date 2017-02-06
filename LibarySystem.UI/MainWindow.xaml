@@ -80,7 +80,7 @@
                VerticalAlignment="Top" />
         <DataGrid x:Name="lendedBookDataGrid" AutoGenerateColumns="False" Grid.Column="3"
                   EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource lendedBookViewSource}}"
-                  Margin="10,123,10,196" RowDetailsVisibilityMode="VisibleWhenSelected">
+                  Margin="10,123,10,196" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="lendedBookDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="catalogueNumberColumn1" Binding="{Binding CatalogueNumber}"
                                     Header="Nr.Katalogowy" Width="90" />
@@ -102,5 +102,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="BTNReturnBook" Content="Zwrot książki" Grid.Column="3" HorizontalAlignment="Left" Margin="429,327,0,0" VerticalAlignment="Top" Width="82" Click="BTNReturnBook_Click"/>
     </Grid>
 </Window>

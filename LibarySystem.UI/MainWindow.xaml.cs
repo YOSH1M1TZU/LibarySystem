@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,6 +15,8 @@ namespace LibarySystem.UI {
         private Book selectedBook;
 
         private Student selectedStudent;
+
+        private LendedBook selectedLendedBook;
 
         public MainWindow() {
             InitializeComponent();
@@ -69,15 +72,32 @@ namespace LibarySystem.UI {
         private async void studentDataGrid_SelectionChanged(object sender,
             SelectionChangedEventArgs e) {
             if (studentDataGrid.CurrentCell.Item == DependencyProperty.UnsetValue) return;
-            selectedStudent = (Student) studentDataGrid.CurrentCell.Item;
-            TXTSelectedStudent.Text = selectedStudent.PESEL;
-            await RefreshLendDataGride();
+
+            try {
+                selectedStudent = (Student) studentDataGrid.CurrentCell.Item;
+                TXTSelectedStudent.Text = selectedStudent.PESEL;
+                await RefreshLendDataGride();
+            }
+            catch (InvalidCastException) {
+                selectedBook = null;
+            }
+            catch (Exception) {
+                throw new NotImplementedException();
+            }
         }
 
         private void bookDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             if (bookDataGrid.CurrentCell.Item == DependencyProperty.UnsetValue) return;
-            selectedBook = (Book) bookDataGrid.CurrentCell.Item;
-            TXTSelectedBook.Text = selectedBook.CatalogueNumber;
+            try {
+                selectedBook = (Book) bookDataGrid.CurrentCell.Item;
+                TXTSelectedBook.Text = selectedBook.CatalogueNumber;
+            }
+            catch (InvalidCastException) {
+                selectedBook = null;
+            }
+            catch (Exception) {
+                throw new NotImplementedException();
+            }
         }
 
         private void BTNAddBookToStudent_Click(object sender, RoutedEventArgs e) {
@@ -89,6 +109,24 @@ namespace LibarySystem.UI {
             var lendedBookViewSource =
                 (CollectionViewSource) FindResource("lendedBookViewSource");
             lendedBookViewSource.Source = await LendedBookOperations.LendedBooksToListAsync(selectedStudent);
+        }
+
+        private void lendedBookDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            if (lendedBookDataGrid.CurrentCell.Item == DependencyProperty.UnsetValue) return;
+            try {
+                selectedLendedBook = (LendedBook) lendedBookDataGrid.CurrentCell.Item;
+            }
+            catch (InvalidCastException) {
+                selectedLendedBook = null;
+            }
+            catch (Exception) {
+                throw new NotImplementedException();
+            }
+        }
+
+        private void BTNReturnBook_Click(object sender, RoutedEventArgs e) {
+            if (selectedStudent != null && selectedLendedBook != null)
+                LendedBookOperations.ReturnBook(selectedStudent, selectedLendedBook);
         }
 
     }
