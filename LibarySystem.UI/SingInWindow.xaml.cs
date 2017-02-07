@@ -2,6 +2,7 @@
 using System.Runtime.ExceptionServices;
 using System.Windows;
 using LibarySystem.DataModel.Operations;
+using System.Windows.Input;
 
 namespace LibarySystem.UI {
 
@@ -41,6 +42,16 @@ namespace LibarySystem.UI {
             }
         }
 
+        private void BTNExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 
 }

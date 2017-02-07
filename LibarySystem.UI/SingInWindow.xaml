@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI"
         mc:Ignorable="d"
-        Title="Logowanie do systemu" Height="188.934" Width="224.588" ResizeMode="NoResize">
+        Title="Logowanie do systemu" Height="180" Width="340" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF010211" MouseDown="Window_MouseDown">
     <Grid Margin="1,0,-1,0">
-        <Button x:Name="BTNSingIn" Content="Zaloguj" HorizontalAlignment="Left" Margin="74,105,0,0"
-                VerticalAlignment="Top" Width="74" Click="BTNSingIn_Click" />
-        <TextBox x:Name="TXTLogin" HorizontalAlignment="Left" Height="23" Margin="67,33,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120" Text="KSYMEK" />
-        <Label Content="Login:" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"
-               RenderTransformOrigin="-0.173,0.171" />
-        <Label Content="Hasło:" HorizontalAlignment="Left" Margin="19,56,0,0" VerticalAlignment="Top" />
-        <PasswordBox x:Name="TXTPassword" HorizontalAlignment="Left" Margin="67,59,0,0" VerticalAlignment="Top"
-                     Width="120" Height="23" Password="password" />
+        <Button x:Name="BTNSingIn" Content="ZALOGUJ" HorizontalAlignment="Left" Margin="130,140,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="90" Click="BTNSingIn_Click" Height="30" Foreground="White" Background="#FF00A2FF" BorderThickness="0" FontSize="16" />
+        <TextBox x:Name="TXTLogin" HorizontalAlignment="Left" Height="23" Margin="87,60,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="195" Text="KSYMEK" FontSize="14" />
+        <Label Content="Login:" HorizontalAlignment="Left" Margin="45,57,0,0" VerticalAlignment="Top"
+               RenderTransformOrigin="-0.173,0.171" Foreground="White" />
+        <Label Content="Hasło:" HorizontalAlignment="Left" Margin="44,90,0,0" VerticalAlignment="Top" Foreground="White" Height="23" />
+        <PasswordBox x:Name="TXTPassword" HorizontalAlignment="Left" Margin="87,90,0,0" VerticalAlignment="Top"
+                     Width="195" Height="23" Password="password" FontSize="14" />
+        <Label x:Name="label" Content="ZALOGUJ SIĘ DO SYSTEMU:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="30" Width="250" Foreground="#FF00A2FF" FontSize="20" VerticalContentAlignment="Center" Padding="0"/>
+        <Button x:Name="BTNExit" Content="X" HorizontalAlignment="Left" Margin="315,5,0,0" VerticalAlignment="Top" Width="20" Height="20" FontSize="14" Padding="0" Foreground="White" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="BTNExit_Click"/>
 
     </Grid>
 </Window>

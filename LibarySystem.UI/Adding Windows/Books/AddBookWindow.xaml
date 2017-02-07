@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
         mc:Ignorable="d"
-        Title="Add Book" Height="184" Width="300" ResizeMode="NoResize">
+        Title="Add Book" Height="245" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF020426" MouseDown="Window_MouseDown">
     <Grid>
-        <Button x:Name="BTNAddBook" Content="Dodaj" HorizontalAlignment="Left" Margin="113,115,0,0"
-                VerticalAlignment="Top" Width="75" Click="BTNAddBook_Click" />
-        <Label Content="Numer katalogowy:" HorizontalAlignment="Left" Margin="37,14,0,0" VerticalAlignment="Top"
-               Height="28" />
-        <TextBox x:Name="TXTBookId" HorizontalAlignment="Left" Height="23" Margin="153,16,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120" />
-        <Label Content="Tytul:" HorizontalAlignment="Left" Margin="113,42,0,0" VerticalAlignment="Top" Height="25" />
-        <TextBox x:Name="TXTBookName" HorizontalAlignment="Left" Height="23" Margin="153,44,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120" />
-        <Label Content="Autor:" HorizontalAlignment="Left" Margin="108,70,0,0" VerticalAlignment="Top" Height="23" />
-        <TextBox x:Name="TXTBookAuthor" HorizontalAlignment="Left" Height="23" Margin="153,72,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120" />
+        <Button x:Name="BTNAddBook" Content="DODAJ" HorizontalAlignment="Left" Margin="175,193,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="BTNAddBook_Click" Foreground="White" Background="#FF00A2FF" Height="35" FontSize="18" Padding="2,0,0,2" />
+        <Label Content="Nr katalogowy:" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top"
+               Height="28" Foreground="White" Padding="10,0,0,0" VerticalContentAlignment="Center" Width="105" FontSize="14" />
+        <TextBox x:Name="TXTBookId" HorizontalAlignment="Left" Height="28" Margin="125,60,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="290" />
+        <Label Content="Tytuł:" HorizontalAlignment="Left" Margin="67,100,0,0" VerticalAlignment="Top" Height="28" Foreground="White" Width="58" Padding="10,0,0,0" VerticalContentAlignment="Center" FontSize="16" />
+        <TextBox x:Name="TXTBookName" HorizontalAlignment="Left" Height="28" Margin="125,100,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="290" />
+        <Label Content="Autor:" HorizontalAlignment="Left" Margin="62,140,0,0" VerticalAlignment="Top" Height="28" Foreground="White" Width="58" FontSize="16" Padding="10,0,0,0" ScrollViewer.CanContentScroll="True" VerticalContentAlignment="Center" />
+        <TextBox x:Name="TXTBookAuthor" HorizontalAlignment="Left" Height="28" Margin="125,140,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="290" />
+        <Label x:Name="label" Content="DODAJ NOWĄ KSIĄŻKĘ:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="30" Width="220" Foreground="#FF00A2FF" FontSize="20" VerticalContentAlignment="Center" Padding="0"/>
+        <Button x:Name="BTNExit" Content="X" HorizontalAlignment="Left" Margin="425,5,0,0" VerticalAlignment="Top" Width="20" Height="20" FontSize="14" Padding="0" Foreground="White" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="BTNExit_Click"/>
 
     </Grid>
 </Window>

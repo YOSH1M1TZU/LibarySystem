@@ -1,0 +1,20 @@
+﻿LibarySystem.UI
+
+
+winexe
+C#
+.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\
+LibarySystem.UI
+none
+false
+DEBUG;TRACE
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\App.xaml
+61585530787
+
+10277403627
+22-685153375
+Adding Windows\Books\AddBookWindow.xaml;Adding Windows\Books\DeleteBookWindow.xaml;Adding Windows\Students\AddStudentWindow.xaml;Adding Windows\Students\DeleteStudentWindow.xaml;MainWindow.xaml;SingInWindow.xaml;
+
+False
+

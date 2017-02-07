@@ -1,0 +1,32 @@
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.UI.exe.config
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.UI.exe
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.UI.pdb
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\EntityFramework.dll
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.Core.dll
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.DataModel.dll
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.Core.pdb
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\LibarySystem.DataModel.pdb
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\EntityFramework.xml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI.csprojResolveAssemblyReference.cache
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Books\AddBookWindow.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Books\DeleteBookWindow.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Students\AddStudentWindow.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Students\DeleteStudentWindow.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\MainWindow.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\SingInWindow.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\App.g.cs
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI_MarkupCompile.cache
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI_MarkupCompile.lref
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Books\AddBookWindow.baml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Books\DeleteBookWindow.baml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Students\AddStudentWindow.baml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\Adding Windows\Students\DeleteStudentWindow.baml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\MainWindow.baml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\SingInWindow.baml
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI.g.resources
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI.Properties.Resources.resources
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI.csproj.GenerateResource.Cache
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI.exe
+C:\Users\YOSH1M1TZU\Desktop\LibarySystem-master\LibarySystem.UI\obj\Debug\LibarySystem.UI.pdb
