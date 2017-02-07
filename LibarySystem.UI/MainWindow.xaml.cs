@@ -7,6 +7,7 @@ using LibarySystem.Core.Objects;
 using LibarySystem.DataModel.Operations;
 using LibarySystem.UI.Adding_Windows.Books;
 using LibarySystem.UI.Adding_Windows.Students;
+using System.Windows.Input;
 
 namespace LibarySystem.UI {
 
@@ -129,6 +130,16 @@ namespace LibarySystem.UI {
                 LendedBookOperations.ReturnBook(selectedStudent, selectedLendedBook);
         }
 
+        private void BTNExit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 
 }

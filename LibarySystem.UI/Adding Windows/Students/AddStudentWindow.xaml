@@ -5,39 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
         mc:Ignorable="d"
-        Title="Add Student" Height="246.333" Width="269.333" ResizeMode="NoResize">
+        Title="Add Student" Height="246.333" Width="269.333" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="#FF020426" MouseDown="Window_MouseDown">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="0*" />
         </Grid.ColumnDefinitions>
-        <Button x:Name="BTNAdd" Content="Dodaj" HorizontalAlignment="Left" Margin="96,177,0,0" VerticalAlignment="Top"
-                Width="75" Click="BTNAdd_Click" Height="20" />
-        <Label Content="Imie:" HorizontalAlignment="Left" Margin="55,18,0,0" VerticalAlignment="Top" Height="27"
-               Width="35" />
-        <Label Content="Nazwisko:&#xA;" HorizontalAlignment="Left" Margin="28,76,0,0" VerticalAlignment="Top"
-               Width="66" Height="29" />
-        <Label Content="Pesel:&#xA;" HorizontalAlignment="Left" Margin="51,104,0,0" VerticalAlignment="Top" Height="29"
-               Width="39" RenderTransformOrigin="0.551,0.213" />
-        <TextBox x:Name="TXTBName" HorizontalAlignment="Left" Height="24" Margin="90,20,0,0"
-                 VerticalAlignment="Top" Width="120" MaxLines="1" Background="{x:Null}" SpellCheck.IsEnabled="True" />
-        <TextBox x:Name="TXTBSurname" HorizontalAlignment="Left" Height="23" Margin="90,78,0,0"
+        <Button x:Name="BTNAdd" Content="DODAJ" HorizontalAlignment="Left" Margin="90,206,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="110" Click="BTNAdd_Click" Height="30" Foreground="White" Background="#FF00A2FF" FontSize="18" BorderThickness="0" />
+        <Label Content="Imie:" HorizontalAlignment="Left" Margin="56,44,0,0" VerticalAlignment="Top" Height="27"
+               Width="35" Foreground="White" />
+        <Label Content="Nazwisko:&#xA;" HorizontalAlignment="Left" Margin="29,102,0,0" VerticalAlignment="Top"
+               Width="66" Height="29" Foreground="White" />
+        <Label Content="Pesel:&#xA;" HorizontalAlignment="Left" Margin="52,130,0,0" VerticalAlignment="Top" Height="29"
+               Width="39" RenderTransformOrigin="0.551,0.213" Foreground="White" />
+        <TextBox x:Name="TXTBName" HorizontalAlignment="Left" Height="24" Margin="91,46,0,0"
+                 VerticalAlignment="Top" Width="140" MaxLines="1" Background="White" SpellCheck.IsEnabled="True" />
+        <TextBox x:Name="TXTBSurname" HorizontalAlignment="Left" Height="23" Margin="91,104,0,0"
                  VerticalAlignment="Top"
-                 Width="120" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
-        <TextBox x:Name="TXTBPesel" HorizontalAlignment="Left" Height="23" Margin="90,107,0,0" VerticalAlignment="Top"
-                 Width="120" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" Background="{x:Null}"
+                 Width="140" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
+        <TextBox x:Name="TXTBPesel" HorizontalAlignment="Left" Height="23" Margin="91,133,0,0" VerticalAlignment="Top"
+                 Width="140" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" Background="White"
                  MaxLines="1" MaxLength="11" />
-        <Label Content="Klasa:&#xA;" HorizontalAlignment="Left" Margin="51,135,0,0" VerticalAlignment="Top" Height="29"
-               Width="40" />
-        <TextBox x:Name="TXTBClass" HorizontalAlignment="Left" Height="26" Margin="90,135,0,0"
+        <Label Content="Klasa:&#xA;" HorizontalAlignment="Left" Margin="52,161,0,0" VerticalAlignment="Top" Height="29"
+               Width="40" Foreground="White" />
+        <TextBox x:Name="TXTBClass" HorizontalAlignment="Left" Height="26" Margin="91,161,0,0"
                  VerticalAlignment="Top"
-                 Width="120" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
-        <Label Content="Drugie Imie:" HorizontalAlignment="Left" Margin="16,47,0,0" VerticalAlignment="Top" Height="27"
-               Width="76" />
-        <TextBox x:Name="TXTBSecoundName" HorizontalAlignment="Left" Height="23" Margin="90,49,0,0"
+                 Width="140" UseLayoutRounding="False" MaxLines="1" SpellCheck.IsEnabled="True" />
+        <Label Content="Drugie Imie:" HorizontalAlignment="Left" Margin="17,73,0,0" VerticalAlignment="Top" Height="27"
+               Width="76" Foreground="White" />
+        <TextBox x:Name="TXTBSecoundName" HorizontalAlignment="Left" Height="23" Margin="91,75,0,0"
                  VerticalAlignment="Top"
-                 Width="120" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" Background="{x:Null}"
+                 Width="140" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" Background="White"
                  MaxLines="1" MaxLength="11" />
+        <Label x:Name="label" Content="DODAJ STUDENTA:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="30" Width="190" Foreground="#FF00A2FF" FontSize="20" VerticalContentAlignment="Center" Padding="0"/>
+        <Button x:Name="BTNExit" Content="X" HorizontalAlignment="Left" Margin="245,5,0,0" VerticalAlignment="Top" Width="20" Height="20" FontSize="14" Padding="0" Foreground="White" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="BTNExit_Click"/>
 
     </Grid>
 </Window>

@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibarySystem.UI.Adding_Windows"
         mc:Ignorable="d"
-        Title="Delete Student" Height="164.789" Width="300" ResizeMode="NoResize">
+        Title="Delete Student" Height="155" Width="300" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="#FF020426" MouseDown="Window_MouseDown">
     <Grid>
-        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="61,26,0,0" VerticalAlignment="Top" />
-        <TextBox x:Name="TXTBPesel" HorizontalAlignment="Left" Height="23" Margin="105,29,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120" />
-        <Button x:Name="BTNDelete" Content="Usun" HorizontalAlignment="Left" Margin="113,78,0,0"
-                VerticalAlignment="Top" Width="75" Click="BTNDelete_Click" />
+        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="130,42,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" />
+        <TextBox x:Name="TXTBPesel" HorizontalAlignment="Left" Height="25" Margin="60,78,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="185" FontSize="16" />
+        <Button x:Name="BTNDelete" Content="USUŃ" HorizontalAlignment="Left" Margin="105,115,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="100" Click="BTNDelete_Click" Height="30" Foreground="White" Background="#FF00A2FF" BorderThickness="0" Padding="0" FontSize="18" />
+        <Label x:Name="label" Content="USUŃ STUDENTA:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="30" Width="190" Foreground="#FF00A2FF" FontSize="20" VerticalContentAlignment="Center" Padding="0"/>
+        <Button x:Name="BTNExit" Content="X" HorizontalAlignment="Left" Margin="275,5,0,0" VerticalAlignment="Top" Width="20" Height="20" FontSize="14" Padding="0" Foreground="White" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="BTNExit_Click"/>
 
     </Grid>
 </Window>

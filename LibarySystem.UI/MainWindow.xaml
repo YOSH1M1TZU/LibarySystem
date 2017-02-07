@@ -8,7 +8,7 @@
     xmlns:Objects="clr-namespace:LibarySystem.Core.Objects;assembly=LibarySystem.Core"
     x:Class="LibarySystem.UI.MainWindow"
     mc:Ignorable="d"
-    Title="Libary System" Height="548.317" Width="1239.866" Loaded="Window_Loaded" ResizeMode="NoResize">
+    Title="Libary System" Height="550" Width="1240" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF020426" MouseDown="Window_MouseDown">
     <Window.Resources>
         <CollectionViewSource x:Key="dbContextViewSource"
                               d:DesignSource="{d:DesignInstance {x:Type DataModel:DbContext}, CreateList=True}" />
@@ -26,22 +26,16 @@
                               d:DesignSource="{d:DesignInstance {x:Type Objects:LendedBook}, CreateList=True}" />
     </Window.Resources>
     <Grid DataContext="{StaticResource dbContextStudentsViewSource}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="712*" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="0*" />
-            <ColumnDefinition Width="521*" />
-        </Grid.ColumnDefinitions>
-        <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="77,489,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnAddStudent_Click" Grid.Column="3" Height="20" />
-        <Button x:Name="BtnAddBook" Content="Dodaj Ksiazke" HorizontalAlignment="Left" Margin="172,489,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnAddBook_Click" Grid.Column="3" Height="20" />
-        <Button x:Name="DeleteStudent" Content="Usun Ucznia" HorizontalAlignment="Left" Margin="267,489,0,0"
-                VerticalAlignment="Top" Width="90" Click="DeleteStudent_Click" Grid.Column="3" Height="20" />
-        <Button x:Name="BtnDeleteBook" Content="Usun Ksiazke" HorizontalAlignment="Left" Margin="362,489,0,0"
-                VerticalAlignment="Top" Width="90" Click="BtnDeleteBook_Click" Grid.Column="3" Height="20" />
+        <Button x:Name="BtnAddStudent" Content="Dodaj Ucznia" HorizontalAlignment="Left" Margin="710,507,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                VerticalAlignment="Top" Width="100" Click="BtnAddStudent_Click" Height="30" Background="#FF00A2FF" BorderThickness="0" Foreground="White" FontSize="14" />
+        <Button x:Name="BtnAddBook" Content="Dodaj Książkę" HorizontalAlignment="Left" Margin="816,507,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                VerticalAlignment="Top" Width="100" Click="BtnAddBook_Click" Height="30" Background="#FF00A2FF" BorderThickness="0" Foreground="White" FontSize="14" />
+        <Button x:Name="DeleteStudent" Content="Usuń ucznia" HorizontalAlignment="Left" Margin="921,507,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                VerticalAlignment="Top" Width="100" Click="DeleteStudent_Click" Height="30" Background="#FF00A2FF" BorderThickness="0" Foreground="White" FontSize="14" />
+        <Button x:Name="BtnDeleteBook" Content="Usuń Książkę" HorizontalAlignment="Left" Margin="1026,507,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                VerticalAlignment="Top" Width="100" Click="BtnDeleteBook_Click" Height="30" Background="#FF00A2FF" BorderThickness="0" Foreground="White" FontSize="14" />
         <DataGrid x:Name="studentDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
-                  ItemsSource="{Binding Source={StaticResource studentViewSource}}" Margin="10,10,363,10"
+                  ItemsSource="{Binding Source={StaticResource studentViewSource}}" Margin="10,10,902,10"
                   RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="studentDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Imie" Width="70" />
@@ -54,7 +48,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="bookDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
-                  ItemsSource="{Binding Source={StaticResource bookViewSource}}" Margin="354,10,9,10"
+                  ItemsSource="{Binding Source={StaticResource bookViewSource}}" Margin="342,10,545,10"
                   RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="bookDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="catalogueNumberColumn" Binding="{Binding CatalogueNumber}"
@@ -64,23 +58,23 @@
                                     Width="103" />
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Pesel:" Grid.Column="3" HorizontalAlignment="Left" Margin="118,16,0,0" VerticalAlignment="Top"
-               Height="26" Width="39" />
-        <Label Content="Książka:" Grid.Column="3" HorizontalAlignment="Left" Margin="115,48,0,0"
-               VerticalAlignment="Top" Height="26" Width="51" />
-        <TextBox x:Name="TXTSelectedStudent" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="177,19,0,0"
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" />
-        <TextBox x:Name="TXTSelectedBook" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="177,51,0,0"
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" />
-        <Button x:Name="BTNAddBookToStudent" Content="Dodaj książke" Grid.Column="3" HorizontalAlignment="Left"
-                Margin="362,54,0,0" VerticalAlignment="Top" Width="81" Click="BTNAddBookToStudent_Click" Height="20" />
-        <DatePicker x:Name="DPDateOfReturn" Grid.Column="3" HorizontalAlignment="Left" Margin="177,83,0,0"
-                    VerticalAlignment="Top" Width="120" SelectedDateFormat="Short" />
-        <Label Content="Data zwrotu:" Grid.Column="3" HorizontalAlignment="Left" Margin="91,81,0,0"
-               VerticalAlignment="Top" />
-        <DataGrid x:Name="lendedBookDataGrid" AutoGenerateColumns="False" Grid.Column="3"
+        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="714,47,0,0" VerticalAlignment="Top"
+               Height="26" Width="39" Foreground="White" />
+        <Label Content="Książka:" HorizontalAlignment="Left" Margin="714,78,0,0"
+               VerticalAlignment="Top" Height="26" Width="51" Foreground="White" />
+        <TextBox x:Name="TXTSelectedStudent" HorizontalAlignment="Left" Height="26" Margin="799,47,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="262" IsEnabled="False" />
+        <TextBox x:Name="TXTSelectedBook" HorizontalAlignment="Left" Height="26" Margin="799,78,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="262" IsEnabled="False" />
+        <Button x:Name="BTNAddBookToStudent" Content="DODAJ KSIĄŻKĘ" HorizontalAlignment="Left" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                Margin="1080,70,0,0" VerticalAlignment="Top" Width="120" Click="BTNAddBookToStudent_Click" Height="33" Background="#FF00A2FF" Foreground="White" FontSize="14" />
+        <DatePicker x:Name="DPDateOfReturn" HorizontalAlignment="Left" Margin="799,109,0,0"
+                    VerticalAlignment="Top" Width="262" SelectedDateFormat="Short" Height="26" BorderThickness="0" />
+        <Label Content="Data zwrotu:" HorizontalAlignment="Left" Margin="714,109,0,0"
+               VerticalAlignment="Top" Foreground="White" />
+        <DataGrid x:Name="lendedBookDataGrid" AutoGenerateColumns="False"
                   EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource lendedBookViewSource}}"
-                  Margin="10,123,10,196" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="lendedBookDataGrid_SelectionChanged">
+                  Margin="710,185,10,48" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="lendedBookDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="catalogueNumberColumn1" Binding="{Binding CatalogueNumber}"
                                     Header="Nr.Katalogowy" Width="90" />
@@ -102,6 +96,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="BTNReturnBook" Content="Zwrot książki" Grid.Column="3" HorizontalAlignment="Left" Margin="429,327,0,0" VerticalAlignment="Top" Width="82" Click="BTNReturnBook_Click"/>
+        <Button x:Name="BTNReturnBook" Content="Zwrot książki" HorizontalAlignment="Left" Margin="1131,507,0,0" VerticalAlignment="Top" Width="100" Click="BTNReturnBook_Click" Height="30" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="#FF00A2FF" BorderThickness="0" Foreground="White" FontSize="14"/>
+        <Button x:Name="BTNExit" Content="X" HorizontalAlignment="Stretch" Margin="1216,5,4,0" VerticalAlignment="Top" Height="20" FontSize="14" Padding="0" Foreground="White" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="BTNExit_Click"/>
+        <Label x:Name="label" Content="PLACEHOLDER" HorizontalAlignment="Left" Margin="710,5,0,0" VerticalAlignment="Top" Height="30" Width="190" Foreground="#FF00A2FF" FontSize="20" VerticalContentAlignment="Center" Padding="0"/>
+        <Label x:Name="label_Copy" Content="PLACEHOLDER" HorizontalAlignment="Left" Margin="710,150,0,0" VerticalAlignment="Top" Height="30" Width="190" Foreground="#FF00A2FF" FontSize="20" VerticalContentAlignment="Center" Padding="0"/>
     </Grid>
 </Window>

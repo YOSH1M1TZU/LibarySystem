@@ -2,6 +2,7 @@
 using System.Windows;
 using LibarySystem.Core.Objects;
 using LibarySystem.DataModel.Operations;
+using System.Windows.Input;
 
 namespace LibarySystem.UI.Adding_Windows.Students {
 
@@ -53,6 +54,15 @@ namespace LibarySystem.UI.Adding_Windows.Students {
             }
         }
 
-    }
+        private void BTNExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+    }
 }
